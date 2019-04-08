@@ -1,0 +1,47 @@
+body{
+	background-image: linear-gradient(to right, #434343 0%, black 100%);
+	background-size: cover;
+	background-position: center;
+}
+
+.row{
+	max-width: 500px;
+	height: 450px;
+	margin: 80px auto;
+}
+.login-box
+{
+	margin-left: 25%;
+}
+.login-left{
+	background: rgb(0,0,0,0.3);
+	padding: 30px;
+	border-right: 0.1px solid black;
+}
+.login-right{
+	background: rgb(0,0,0,0.3);
+	padding: 30px;
+	border-left: 0.0001px solid black;
+}
+a{
+	color: #fff !important;
+	margin-top: -200px !important;
+}
+h2, label{
+	color: #fff;
+}
+form
+{
+	margin-top: 45px;
+}
+
+.btn
+{
+	float: right;
+	margin-top: 100px;
+	font-family: 'Montserrat';
+}
+#submit
+{
+	background-image: linear-gradient(to bottom right, #30cfd0 0%, #330867 100%);
+}
