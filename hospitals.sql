@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 09, 2019 at 08:01 PM
+-- Generation Time: Apr 09, 2019 at 08:24 PM
 -- Server version: 10.1.36-MariaDB
 -- PHP Version: 7.2.10
 
@@ -63,7 +63,16 @@ INSERT INTO `hospitals` (`id`, `name`, `address`) VALUES
 (22, 'nostrum hospital', 'uttara, sector 8 ,rd 7'),
 (23, 'lab one hospital', 'west uttara, sector 5'),
 (24, 'the chader hashi chinhito paribarik hospital', 'kazibari ,amtola'),
-(25, 'sukundir bag mridha community hospital', 'sukundirbag, hydrabad idgah');
+(25, 'sukundir bag mridha community hospital', 'sukundirbag, hydrabad idgah'),
+(26, 'apollo hospital', 'bashundhara e block road  plot 81'),
+(27, 'square hospital', '18/F, Bir Uttam Qazi Nuruzzaman Sarak West, Panthapath, Dhaka 1205\r\n'),
+(28, 'ibn sina hospital', 'dhanmondi , road no 15 a'),
+(29, 'popular hospital', 'dhanmondi branch house 16'),
+(30, 'birdem hospital', '122 kazi nazrul avenue'),
+(31, 'bangladesh ent hospital', 'rapa plaza, 4/1 sobhanbag mirpur raod'),
+(32, 'cmh hospital', 'dhaka 1206'),
+(33, 'samorita hospital', '89/1 panthapath dhaka 1215'),
+(34, 'dhaka medical college', 'dhaka 1000');
 
 --
 -- Indexes for dumped tables
