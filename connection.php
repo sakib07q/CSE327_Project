@@ -2,14 +2,14 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$database = "club_management";
+$database = "health_care";
 
 // Create connection
 $conn = mysqli_connect($servername, $username, $password, $database);
 
 // Check connection
-if (!$conn) {
+/*if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
-echo "Connected successfully";
+echo "Connected successfully";*/
 ?>

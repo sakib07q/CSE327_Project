@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>BMI Calculator</title>
+  <title>Top Doctors</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel ="stylesheet" href="css_files/index.css">
@@ -12,11 +12,12 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Gothic+A1|Inconsolata|Roboto|Montserrat|Abril+Fatface" rel="stylesheet">
 </head>
 <body>
 <nav class="navbar navbar-inverse navbar-expand-md bg-dark navbar-dark" style="background-image: linear-gradient(to right, #0D0D0D, #0D0D0D);">
-  <a href="#" class="logo" style="float: "><img src="images/logo.png"></a>
+  <a href="navigation.html" class="logo" style="float: "><img src="images/logo.png"></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -28,34 +29,43 @@
     </ul>
   </div>  
 </nav>
-<p id="bmi">Champions train loosers complain</p>
+<p id="bmi">Medicines cure diseases, but only doctors can cure patients</p>
 <br>
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$database = "health_care";
+
+// Create connection
+$conn = mysqli_connect($servername, $username, $password, $database);
+
+?>
+
+<?php $search = $_POST['search']; ?>
 <div class="container-fluid">
-  <div class="row" id="form_row">
-    <div class="col-sm-12">
-        <div class="col-sm-3"></div>
-    <div class="col-sm-3" style="background-color: rgb(0,0,0,0.3); margin-left: -10%">
-    <form action="bmi_calculator.php" method="post">
-    <div class="row">
-        <div class="col-sm-12">
-          <p id="bmi_para">BMI</p>
-          <p style="font-weight: bold; color: #fff;letter-spacing: 1px; margin-top: 15px">Enter your height</p><br>
-          <input type ="number" class="form-control"  name = "height"><br>
-          <p style="font-weight: bold; color: #fff;letter-spacing: 1px">Enter your weight</p><br>
-          <input type = "number" class="form-control" name="weight"><br>
-        </div>
-        <di0v class="col-sm-12" style="margin-bottom: 0px;padding-bottom: 0px"> 
-          <button type="submit" class="btn btn-default" id="btn-submit" style="margin-left: 70%; margin-top: 20%;
-          margin-bottom: 15%; float: left">Calculate</button><br><br>
-        </div>
-        </div>
-        </div>
-        </form>
+  <form action="doctors_list.php" method="post">
+      <div class="search-box">
+        <input class="search-text" type="text" placeholder="Type to search" name="search">
+        <button class="search-btn" type="submit" name="submit"><i class="fas fa-search"></i></button>
       </div>
-      <div class="col-sm-6"></div>
+    </form>
+  <div class="row"> 
+<div class="card-deck" id="#card_doctor">
+  <?php
+    $result = $conn->query("SELECT * FROM doctors WHERE field = '$search'") or die($conn->error);
+    while($row = $result->fetch_assoc()):  ?> 
+    <div class="card" style="background: #000;">
+      <img src="images/doctor_real.png" alt="card image" class="card-img-top" style="width: 80%; margin: 15px 15px 15px 35px;">
+      <div class="card-body text-center">
+        <p class="card-text"><?php echo $row['name']; ?></p>
+        <p class="card-text"><?php echo $row['qualification']; ?></p>
+        <p class="card-text"><?php echo $row['hospital']; ?></p>
+      </div>
     </div>
-    </div> 
-  </div>
+  <?php endwhile; ?>
+</div>
+</div>
 </div>
 </body>
 <footer>

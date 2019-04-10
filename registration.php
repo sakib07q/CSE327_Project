@@ -1,19 +1,19 @@
 <?php
 session_start();
-header('location:login.html');
+header('location:index.html');
 $servername = "localhost";
 $username = "root";
 $password = "";
-$database = "club_management";
+$database = "health_care";
 // Create connection
 // $con = mysqli_connect('localhost', 'root', '');
 $con = mysqli_connect($servername, $username, $password, $database);
-mysqli_select_db( $con, 'club_management');
+mysqli_select_db( $con, 'health_care');
 
 $name = $_POST['user'];
 $pass = $_POST['password'];
 
-$s = "select * from userregistration where user = '$name'";
+$s = "select * from user_registration where user = '$name'";
 
 $result = mysqli_query($con, $s);
 
@@ -23,7 +23,7 @@ if($num == 1) {
 	echo " Username Already Taken";
 }
 else {
-	$reg = "insert into userregistration(user,password) values('$name' , '$pass')";
+	$reg = "insert into user_registration(user,password) values('$name' , '$pass')";
 	mysqli_query($con , $reg);
 }
 
