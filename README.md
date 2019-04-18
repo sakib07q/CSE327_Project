@@ -2,7 +2,7 @@
 
 a healthcare web application .
 
-use the index file to login.
+use the database file and login using htdocs project folder.
 
 used: bootstrap,css,html,php
 
